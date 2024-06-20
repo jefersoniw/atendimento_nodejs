@@ -11,9 +11,9 @@ tabelas.init(conexao)
 
 app.listen(port, error => {
   if (error) {
-    console.log('deu erro!')
+    console.log('ERROR!')
     return
   }
 
-  console.log('subiu aplicação!')
+  console.log('Server ON!')
 })
