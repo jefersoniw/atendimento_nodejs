@@ -1,6 +1,8 @@
+const Atendimento = require('../models/Atendimento')
+
 class AtendimentoController {
   index() {
-    return `Bucando todos os atendimentos...`
+    return Atendimento.index()
   }
 
   store() {
