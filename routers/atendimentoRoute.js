@@ -6,7 +6,10 @@ const atendimentoController = require('../controllers/atendimentoController')
 //verbos http
 router.get('/atendimentos', (req, res) => {
   const response = atendimentoController.index()
-  res.send(response)
+
+  response
+    .then(atendimentos => res.status(200).json(atendimentos))
+    .catch(error => res.status(400).json(error.message))
 })
 
 router.post('/atendimentos', (req, res) => {
