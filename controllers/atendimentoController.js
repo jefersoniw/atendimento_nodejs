@@ -5,20 +5,20 @@ class AtendimentoController {
     return Atendimento.index()
   }
 
-  store() {
-    return `Criando atendimento...`
+  store(request) {
+    return Atendimento.store(request)
   }
 
   show(id) {
-    return `Buscando atendimento ${id}`
+    return Atendimento.show(id)
   }
 
-  update(id) {
-    return `Atualizando atendimento ${id}`
+  update(req, id) {
+    return Atendimento.update(req, id)
   }
 
   delete(id) {
-    return `Excluindo atendimento ${id}`
+    return Atendimento.delete(id)
   }
 }
 
