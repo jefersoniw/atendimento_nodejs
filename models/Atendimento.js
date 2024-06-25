@@ -12,6 +12,18 @@ class Atendimento {
       })
     })
   }
+
+  store(req) {
+    const sql = `insert into atendimentos set ?`
+    return new Promise((resolve, reject) => {
+      conexao.query(sql, req, (error, response) => {
+        if (error) {
+          reject(error)
+        }
+        resolve(response)
+      })
+    })
+  }
 }
 
 module.exports = new Atendimento()

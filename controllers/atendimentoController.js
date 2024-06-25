@@ -5,8 +5,8 @@ class AtendimentoController {
     return Atendimento.index()
   }
 
-  store() {
-    return `Criando atendimento...`
+  store(request) {
+    return Atendimento.store(request)
   }
 
   show(id) {

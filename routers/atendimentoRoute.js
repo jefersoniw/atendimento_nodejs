@@ -13,8 +13,12 @@ router.get('/atendimentos', (req, res) => {
 })
 
 router.post('/atendimentos', (req, res) => {
-  const response = atendimentoController.store()
-  res.send(response)
+  const request = req.body
+  const response = atendimentoController.store(request)
+
+  response
+    .then(atendimento => res.status(201).json(atendimento))
+    .catch(error => res.status(400).json(error.message))
 })
 
 router.get('/atendimento/:id', (req, res) => {
