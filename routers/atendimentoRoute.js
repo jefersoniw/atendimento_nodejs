@@ -43,7 +43,10 @@ router.put('/atendimento/:id', (req, res) => {
 router.delete('/atendimento/:id', (req, res) => {
   const { id } = req.params
   const response = atendimentoController.delete(id)
-  res.send(response)
+
+  response
+    .then(atendimento => res.status(200).json(atendimento))
+    .catch(error => res.status(400).json(error.message))
 })
 
 module.exports = router

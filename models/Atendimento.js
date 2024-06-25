@@ -49,6 +49,18 @@ class Atendimento {
       })
     })
   }
+
+  delete(id) {
+    const sql = `delete from atendimentos where id = ?`
+    return new Promise((resolve, reject) => {
+      conexao.query(sql, id, (error, response) => {
+        if (error) {
+          reject(error)
+        }
+        resolve(response)
+      })
+    })
+  }
 }
 
 module.exports = new Atendimento()

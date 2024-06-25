@@ -18,7 +18,7 @@ class AtendimentoController {
   }
 
   delete(id) {
-    return `Excluindo atendimento ${id}`
+    return Atendimento.delete(id)
   }
 }
 
