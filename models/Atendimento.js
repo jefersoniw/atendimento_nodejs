@@ -27,9 +27,9 @@ class Atendimento {
   }
 
   show(id) {
-    const sql = `select * from atendimentos where id = ${id}`
+    const sql = `select * from atendimentos where id = ?`
     return new Promise((resolve, reject) => {
-      conexao.query(sql, (error, response) => {
+      conexao.query(sql, id, (error, response) => {
         if (error) {
           reject(error)
         }
@@ -39,9 +39,9 @@ class Atendimento {
   }
 
   update(req, id) {
-    const sql = `update atendimentos set ? where id = ${id}`
+    const sql = `update atendimentos set ? where id = ?`
     return new Promise((resolve, reject) => {
-      conexao.query(sql, req, (error, response) => {
+      conexao.query(sql, [req, id], (error, response) => {
         if (error) {
           reject(error)
         }
