@@ -10,11 +10,11 @@ class AtendimentoController {
   }
 
   show(id) {
-    return `Buscando atendimento ${id}`
+    return Atendimento.show(id)
   }
 
-  update(id) {
-    return `Atualizando atendimento ${id}`
+  update(req, id) {
+    return Atendimento.update(req, id)
   }
 
   delete(id) {

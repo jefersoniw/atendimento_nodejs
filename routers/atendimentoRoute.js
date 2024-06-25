@@ -24,13 +24,20 @@ router.post('/atendimentos', (req, res) => {
 router.get('/atendimento/:id', (req, res) => {
   const { id } = req.params
   const response = atendimentoController.show(id)
-  res.send(response)
+
+  response
+    .then(atendimento => res.status(200).json(atendimento))
+    .catch(error => res.status(400).json(error.message))
 })
 
 router.put('/atendimento/:id', (req, res) => {
   const { id } = req.params
-  const response = atendimentoController.update(id)
-  res.send(response)
+  const request = req.body
+  const response = atendimentoController.update(request, id)
+
+  response
+    .then(atendimento => res.status(201).json(atendimento))
+    .catch(error => res.status(400).json(error.message))
 })
 
 router.delete('/atendimento/:id', (req, res) => {
