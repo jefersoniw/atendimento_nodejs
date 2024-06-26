@@ -4,56 +4,32 @@ const conexao = require('../db/conexao')
 class Atendimento {
   index() {
     const sql = `select * from atendimentos`
-    return new Promise((resolve, reject) => {
-      conexao.query(sql, (error, response) => {
-        if (error) {
-          reject(error)
-        }
-        resolve(response)
-      })
-    })
+    return this.executeQuery(sql)
   }
 
   store(req) {
     const sql = `insert into atendimentos set ?`
-    return new Promise((resolve, reject) => {
-      conexao.query(sql, req, (error, response) => {
-        if (error) {
-          reject(error)
-        }
-        resolve(response)
-      })
-    })
+    return this.executeQuery(sql, req)
   }
 
   show(id) {
     const sql = `select * from atendimentos where id = ?`
-    return new Promise((resolve, reject) => {
-      conexao.query(sql, id, (error, response) => {
-        if (error) {
-          reject(error)
-        }
-        resolve(response)
-      })
-    })
+    return this.executeQuery(sql, id)
   }
 
   update(req, id) {
     const sql = `update atendimentos set ? where id = ?`
-    return new Promise((resolve, reject) => {
-      conexao.query(sql, [req, id], (error, response) => {
-        if (error) {
-          reject(error)
-        }
-        resolve(response)
-      })
-    })
+    return this.executeQuery(sql, [req, id])
   }
 
   delete(id) {
     const sql = `delete from atendimentos where id = ?`
+    return this.executeQuery(sql, id)
+  }
+
+  executeQuery(sql, params = null) {
     return new Promise((resolve, reject) => {
-      conexao.query(sql, id, (error, response) => {
+      conexao.query(sql, params, (error, response) => {
         if (error) {
           reject(error)
         }
