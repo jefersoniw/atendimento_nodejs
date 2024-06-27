@@ -3,6 +3,30 @@ const app = express()
 const port = 3000
 const appCustom = require('./config/index')
 
+//swagger
+const swaggerUI = require('swagger-ui-express')
+const swaggerJsDoc = require('swagger-jsdoc')
+
+var swaggerDefinition = {
+  info: {
+    title: 'Node Swagger',
+    version: '1.0.00',
+    description: 'Documentação de Api - Atendimento NodeJS'
+  },
+  components: {
+    schemas: require('./schemas.json')
+  }
+}
+
+var options = {
+  swaggerDefinition: swaggerDefinition,
+  apis: ['./routers/*.js']
+}
+
+var swaggerSpec = swaggerJsDoc(options)
+app.use('/docs', swaggerUI.serve, swaggerUI.setup(swaggerSpec))
+//swagger
+
 appCustom(app, express)
 
 app.listen(port, error => {
