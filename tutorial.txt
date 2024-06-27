@@ -4,3 +4,6 @@
 -> npm install -g nodemon - instalando nodemon para uso continuo do servidor 
 -> node index.js ou nodemon index.js - iniciando servidor
 -> npm install mysql - instalando dependencias do mysql
+
+
+-> npm install swagger-jsdoc swagger-ui-express 

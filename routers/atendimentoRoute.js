@@ -4,6 +4,22 @@ const router = Router()
 const atendimentoController = require('../controllers/atendimentoController')
 
 //verbos http
+/**
+ * @swagger
+ * /atendimentos:
+ *  get:
+ *    tags:
+ *      - atendimentos
+ *    description: Get Atendimentos
+ *    produces:
+ *      - application/json
+ *    responses:
+ *      200:
+ *        description: Retorna todos os atendimentos
+ *        schema:
+ *          $ref: '#/components/schemas/Atendimento'
+ *
+ */
 router.get('/atendimentos', atendimentoController.index)
 
 router.post('/atendimentos', atendimentoController.store)
