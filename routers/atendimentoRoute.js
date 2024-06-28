@@ -71,6 +71,7 @@ router.post('/atendimentos', atendimentoController.store)
  */
 router.get('/atendimento/:id', atendimentoController.show)
 
+//CONITNUAR DAQUI
 router.put('/atendimento/:id', atendimentoController.update)
 
 router.delete('/atendimento/:id', atendimentoController.delete)
