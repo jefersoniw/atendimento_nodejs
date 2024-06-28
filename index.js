@@ -9,9 +9,9 @@ const swaggerJsDoc = require('swagger-jsdoc')
 
 var swaggerDefinition = {
   info: {
-    title: 'Node Swagger',
+    title: 'CRUD Atendimentos Swagger',
     version: '1.0.00',
-    description: 'Documentação de Api - Atendimento NodeJS'
+    description: 'Documentação de Api - CRUD Atendimento NodeJS'
   },
   components: {
     schemas: require('./schemas.json')
