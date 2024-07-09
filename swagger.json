@@ -121,6 +121,25 @@
             "description": "erro!"
           }
         }
+      },
+      "delete": {
+        "tags": ["Atendimento"],
+        "summary": "Delete one atendimento",
+        "description": "Delete one atendimento",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "type": "string",
+            "description": "Id atendimento",
+            "required": true
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "updated!"
+          }
+        }
       }
     }
   }
