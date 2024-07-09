@@ -1,0 +1,127 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Atendimentos",
+    "description": "Documentation from atendimentos api",
+    "version": "1.0.0"
+  },
+  "basePath": "/",
+  "paths": {
+    "/atendimentos": {
+      "get": {
+        "tags": ["Atendimento"],
+        "summary": "Return all atendimentos",
+        "description": "Return all atendimentos",
+        "responses": {
+          "200": {
+            "description": "success!"
+          }
+        }
+      },
+      "post": {
+        "tags": ["Atendimento"],
+        "summary": "Create one atendimento",
+        "description": "Create one atendimento",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "string"
+                  },
+                  "servico": {
+                    "type": "string"
+                  },
+                  "cliente": {
+                    "type": "string"
+                  },
+                  "status": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "created!"
+          },
+          "400": {
+            "description": "erro!"
+          }
+        }
+      }
+    },
+    "/atendimento/{id}": {
+      "get": {
+        "tags": ["Atendimento"],
+        "summary": "Return one atendimento",
+        "description": "Return one atendimento",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "type": "string",
+            "description": "Id atendimento",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success!"
+          }
+        }
+      },
+      "put": {
+        "tags": ["Atendimento"],
+        "summary": "Edit one atendimento",
+        "description": "Edit one atendimento",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "type": "string",
+            "description": "Id atendimento",
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "string"
+                  },
+                  "servico": {
+                    "type": "string"
+                  },
+                  "cliente": {
+                    "type": "string"
+                  },
+                  "status": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "updated!"
+          },
+          "400": {
+            "description": "erro!"
+          }
+        }
+      }
+    }
+  }
+}
