@@ -8,7 +8,8 @@
 
 ## 📖 Sobre o projeto
 
-Criando uma simples **api rest CRUD**. Aprendendo sobre a tecnológia Node Express.
+- Criação de uma **api rest** para gerenciamento de atendimentos.
+- Aprendendo sobre a tecnológia Node Express.
 
 ## 🔨 Tecnologias utilizadas
 
