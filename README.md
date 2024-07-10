@@ -35,3 +35,8 @@ Criando uma simples **api rest CRUD**. Aprendendo sobre a tecnológia Node Expre
 ```bash
   $ nodemon index.js
 ```
+## 🛎️ License
+
+[![NPM](https://img.shields.io/badge/license-MIT-green)](https://github.com/jefersoniw/atendimento_nodejs/blob/main/LICENSE)
+
+
