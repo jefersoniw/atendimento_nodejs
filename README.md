@@ -16,12 +16,14 @@ Criando uma simples **api rest CRUD**. Aprendendo sobre a tecnológia Node Expre
 - [Node](https://nodejs.org/pt)
 - [Express Js](https://expressjs.com/pt-br/)
 - [MySql](https://dev.mysql.com/doc/)
+- [Git](https://git-scm.com/)
 - [Swagger](https://swagger.io/docs/)
 
 ## ♻️ Como executar o projeto
 ### Pré-requisitos: 
   - Node
   - MySql
+  - Git
 
 ```bash
   # Clonar repositório
